@@ -1,0 +1,260 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/webcontainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#000000"
+        android:orientation="horizontal"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <Button
+            android:id="@+id/actionButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="+" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/menuButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+
+                    android:text="☰" />
+
+
+                <Button
+                    android:id="@+id/open_url_button"
+                    android:layout_width="60dp"
+
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:includeFontPadding="false"
+                    android:text="🌐" />
+
+                <Button
+                    android:id="@+id/hideUrlButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@id/menuButton"
+                    android:layout_centerHorizontal="true"
+                    android:text="👁" />
+
+                <Button
+                    android:id="@+id/change_webview_button"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="▷" />
+
+
+                <Button
+                    android:id="@+id/increase_height_button"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="▼" />
+
+                <Button
+
+                    android:id="@+id/decrease_height_button"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+
+                    android:text="▲" />
+
+                <Button
+                    android:id="@+id/fullscreenButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="□" />
+
+
+                <Button
+                    android:id="@+id/settings_button"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="⚙" />
+
+                <Button
+                    android:id="@+id/refresh_button"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="⟳"
+                    android:textSize="10sp" />
+
+
+                <SearchView
+                    android:id="@+id/search_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Search apps" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+    </LinearLayout>
+
+
+
+
+    <EditText
+        android:id="@+id/url_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:focusedByDefault="false"
+
+        android:hint="Enter URL"
+        android:maxLines="3"
+        android:minLines="3"
+        android:text="https://www.google.com"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/webview_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <FrameLayout
+        android:id="@+id/webview_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/url_input">
+
+        <WebView
+            android:id="@+id/webview1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:visibility="visible">
+
+
+        </WebView>
+
+        <WebView
+            android:id="@+id/webview2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <WebView
+            android:id="@+id/webview3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <WebView
+            android:id="@+id/webview4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <WebView
+            android:id="@+id/webview5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/subBrowserMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:alpha="0.95"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Zoom" />
+
+            <SeekBar
+                android:id="@+id/zoomSeekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="500"
+                android:progress="100" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Text Zoom" />
+
+            <SeekBar
+                android:id="@+id/textZoomSeekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="200"
+                android:progress="10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="webview height" />
+
+            <SeekBar
+                android:id="@+id/webViewHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="webview width" />
+
+            <SeekBar
+                android:id="@+id/webViewWidth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="200"
+                android:progress="100" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
