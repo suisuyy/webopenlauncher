@@ -1,4 +1,4 @@
-package com.benny.openlauncher.util;
+package com.benny.openlauncher.activity.weblauncher;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -36,14 +36,22 @@ public class LauncherModel {
     public String searchEnginUrl="https://google.com/search?q=";
 
     public String[] urls = new String[webViewNumber];
-    public String[] shortcutArray= new String[50];
+    public String[] shortcutArray= new String[20];
     public int[] intArray = new int[0];
+
+    public String[] favItemArray= new String[20];
+    public String[] autoLoadScriptArray= new String[10];
 
     public LauncherModel(Context context) {
         prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         for (int i = 0; i < urls.length    ; i++) {
             urls[i]="";
         }
+
+        favItemArray[0]="google,https://www.google.com";
+        favItemArray[1]="bing,https://www.bing.com";
+        autoLoadScriptArray[0]="aiinput,javascript:(function(){var scriptURL='  https://webaiinput.pages.dev/index.js  ';window.hypothesisConfig=function(){return{showHighlights:true,appType:'bookmarklet'};};var d=document,s=d.createElement('script');s.setAttribute('src',scriptURL);d.body.appendChild(s)})();\n";
+
         loadSettings(); // Load settings when the model is instantiated
     }
 

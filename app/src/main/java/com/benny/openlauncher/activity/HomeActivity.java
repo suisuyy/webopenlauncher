@@ -34,6 +34,8 @@ import com.benny.openlauncher.activity.homeparts.HpDesktopOption;
 import com.benny.openlauncher.activity.homeparts.HpDragOption;
 import com.benny.openlauncher.activity.homeparts.HpInitSetup;
 import com.benny.openlauncher.activity.homeparts.HpSearchBar;
+import com.benny.openlauncher.activity.weblauncher.AllFunctionWebviewSetter;
+import com.benny.openlauncher.activity.weblauncher.WebviewPlugin;
 import com.benny.openlauncher.interfaces.AppDeleteListener;
 import com.benny.openlauncher.interfaces.AppUpdateListener;
 import com.benny.openlauncher.manager.Setup;
